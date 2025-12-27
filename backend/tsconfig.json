@@ -4,14 +4,15 @@
 		"module": "CommonJS",
 		"rootDir": "src",
 		"outDir": "dist",
+		"baseUrl": "src",
 		"strict": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true,
 		"paths": {
-			"~/*": ["./src/*"]
+			"~/*": ["*"]
 		}
 	},
-	"include": ["src"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules", "tests", "eslint.config.js"]
 }
