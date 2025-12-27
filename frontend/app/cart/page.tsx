@@ -5,12 +5,14 @@ import { useState } from 'react';
 import { useCart } from '~/contextProviders/useCart';
 import Navbar from '~/common/components/Navbar';
 import CouponForm from '~/components/coupons/CouponForm';
+import CheckoutButton from '~/components/cart/CheckoutButton';
 
 export default function CartPage() {
 	const { cart, removeFromCart, clearCart, getTotal } = useCart();
 	const [discountPercent, setDiscountPercent] = useState(0);
 	const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discountPercent: number } | null>(null);
 
+	const userId = 'user-1'; // You can dynamically fetch this later
 	const subtotal = getTotal();
 	const discountAmount = (subtotal * discountPercent) / 100;
 	const finalAmount = subtotal - discountAmount;
@@ -60,7 +62,9 @@ export default function CartPage() {
 						</p>
 					)}
 					<p className="text-lg font-semibold">Total: ${finalAmount.toFixed(2)}</p>
-					<Button className="w-40 mt-2">Checkout</Button>
+
+					<CheckoutButton userId={userId} couponCode={appliedCoupon?.code ?? null} />
+
 					<Button variant="outline" onClick={clearCart} className="w-40">
 						Clear Cart
 					</Button>

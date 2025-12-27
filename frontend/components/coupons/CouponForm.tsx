@@ -6,6 +6,7 @@ import { Button } from '~/components/ui/button';
 import { Label } from '~/components/ui/label';
 import { useCouponMutation } from '~/hooks/useCouponMutation';
 import { Card, CardContent, CardFooter } from '~/components/ui/card';
+import { useGetUser } from '~/hooks/useGetUser';
 
 interface CouponFormProps {
 	onApplyDiscount: (discountPercent: number, code: string) => void;
@@ -15,16 +16,23 @@ interface CouponFormProps {
 export default function CouponForm({ onApplyDiscount, appliedCoupon }: CouponFormProps) {
 	const [coupon, setCoupon] = useState('');
 	const { mutate, isPending, data, error } = useCouponMutation();
+	const user = useGetUser();
 
 	const handleApply = () => {
 		if (!coupon.trim()) return;
-		mutate(coupon, {
-			onSuccess: (res) => {
-				if (res.valid) {
-					onApplyDiscount(res.discountPercent, coupon);
-				}
+		mutate(
+			{
+				couponCode: coupon,
+				userId: user,
 			},
-		});
+			{
+				onSuccess: (res) => {
+					if (res.valid) {
+						onApplyDiscount(res.discountPercent, coupon);
+					}
+				},
+			}
+		);
 	};
 
 	return (
