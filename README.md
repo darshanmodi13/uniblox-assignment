@@ -5,9 +5,9 @@ A full-stack e-commerce platform built with modern web technologies. The platfor
 ## 🚀 Links
 
 - **Git Repository**: [https://github.com/darshanmodi13/uniblox-assignment.git](https://github.com/darshanmodi13/uniblox-assignment.git)
-- **Postman Collection**: [Postman Collection URL](https://www.postman.com/your-workspace/uniblox-backend-api)
-- **Backend Hosted URL**: [Backend Deployment URL](https://your-backend-url.com)
-- **Frontend Hosted URL**: [Frontend Deployment URL](https://your-frontend-url.com)
+- **Postman Collection**: [Postman Collection URL](https://darshanmodi300-7909464.postman.co/workspace/Darshan's-Workspace~2f594e4c-f830-4d13-8d46-61ac1e3939c7/collection/51084460-b334f629-9757-4b6f-af0a-d21639528e46?action=share&creator=51084460&active-environment=51084460-de0d4b91-e496-4f44-a7f8-92e9308f5275)
+- **Backend Hosted URL**: [Backend Deployment URL](https://uniblox-assignment-jl5q.onrender.com)
+- **Frontend Hosted URL**: [Frontend Deployment URL](https://uniblox-assignment-one.vercel.app/)
 
 ## 📋 Table of Contents
 
