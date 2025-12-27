@@ -1,10 +1,14 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import helmet from 'helmet';
-import hpp from 'hpp';
 import compression from 'compression';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import helmet from 'helmet';
+import hpp from 'hpp';
 import morgan from 'morgan';
+
+import { errorHandler } from '~/middlewares/errorHandler';
+import productRoutes from '~/routes/product.routes';
+import { AppError } from '~/utils/AppError';
 
 dotenv.config();
 
@@ -21,5 +25,13 @@ app.use(compression());
 app.get('/health', (_req, res) => {
 	res.send('Uniblox backend running 🚀');
 });
+
+app.use('/products', productRoutes);
+
+app.use((req, _res, next) => {
+	next(new AppError(`Route not found: ${req.originalUrl}`, 404));
+});
+
+app.use(errorHandler);
 
 export default app;
