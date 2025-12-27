@@ -9,6 +9,7 @@ import morgan from 'morgan';
 import { errorHandler } from '~/middlewares/errorHandler';
 import productRoutes from '~/routes/product.routes';
 import couponRoutes from '~/routes/coupon.routes';
+import orderRoutes from '~/routes/order.routes';
 import { AppError } from '~/utils/AppError';
 
 dotenv.config();
@@ -30,6 +31,8 @@ app.get('/api/health', (_req, res) => {
 app.use('/api/products', productRoutes);
 
 app.use('/api/coupons', couponRoutes);
+
+app.use('/api/orders', orderRoutes);
 
 app.use((req, _res, next) => {
 	next(new AppError(`Route not found: ${req.originalUrl}`, 404));
