@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ShoppingCart } from 'lucide-react';
-import { Button } from '~/components/ui/button';
+import { Button } from '~/common/components/ui/button';
 import { useCart } from '~/contextProviders/useCart';
 
 export default function Navbar() {

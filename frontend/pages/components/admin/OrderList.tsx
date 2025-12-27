@@ -1,7 +1,7 @@
 'use client';
 
-import { useOrdersQuery } from '~/hooks/useAdminDataQueries';
-import { Card, CardHeader, CardTitle, CardContent } from '~/components/ui/card';
+import { useOrdersQuery } from '~/common/hooks/useAdminDataQueries';
+import { Card, CardHeader, CardTitle, CardContent } from '~/common/components/ui/card';
 
 export default function OrderList() {
 	const { data: orders, isLoading } = useOrdersQuery();

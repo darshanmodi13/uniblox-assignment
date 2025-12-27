@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Input } from '~/components/ui/input';
-import { Button } from '~/components/ui/button';
-import { Label } from '~/components/ui/label';
-import { useCouponMutation } from '~/hooks/useCouponMutation';
-import { Card, CardContent, CardFooter } from '~/components/ui/card';
-import { useGetUser } from '~/hooks/useGetUser';
+import { Input } from '~/common/components/ui/input';
+import { Button } from '~/common/components/ui/button';
+import { Label } from '~/common/components/ui/label';
+import { useCouponMutation } from '~/common/hooks/useCouponMutation';
+import { Card, CardContent, CardFooter } from '~/common/components/ui/card';
+import { useGetUser } from '~/common/hooks/useGetUser';
 
 interface CouponFormProps {
 	onApplyDiscount: (discountPercent: number, code: string) => void;

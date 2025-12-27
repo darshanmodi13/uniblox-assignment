@@ -1,7 +1,7 @@
 'use client';
 
-import { useOrdersQuery, useCouponsQuery } from '~/hooks/useAdminDataQueries';
-import { Card } from '~/components/ui/card';
+import { useOrdersQuery, useCouponsQuery } from '~/common/hooks/useAdminDataQueries';
+import { Card } from '~/common/components/ui/card';
 
 export default function AdminStats() {
 	const { data: orders } = useOrdersQuery();

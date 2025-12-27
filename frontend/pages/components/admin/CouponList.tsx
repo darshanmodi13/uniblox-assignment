@@ -1,7 +1,7 @@
 'use client';
 
-import { useCouponsQuery } from '~/hooks/useAdminDataQueries';
-import { Card, CardHeader, CardTitle, CardContent } from '~/components/ui/card';
+import { useCouponsQuery } from '~/common/hooks/useAdminDataQueries';
+import { Card, CardHeader, CardTitle, CardContent } from '~/common/components/ui/card';
 
 export default function CouponList() {
 	const { data, isLoading } = useCouponsQuery();
