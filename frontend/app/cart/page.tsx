@@ -6,13 +6,14 @@ import { useCart } from '~/contextProviders/useCart';
 import Navbar from '~/common/components/Navbar';
 import CouponForm from '~/components/coupons/CouponForm';
 import CheckoutButton from '~/components/cart/CheckoutButton';
+import { useGetUser } from '~/hooks/useGetUser';
 
 export default function CartPage() {
 	const { cart, removeFromCart, clearCart, getTotal } = useCart();
 	const [discountPercent, setDiscountPercent] = useState(0);
 	const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discountPercent: number } | null>(null);
 
-	const userId = 'user-1'; // You can dynamically fetch this later
+	const userId = useGetUser();
 	const subtotal = getTotal();
 	const discountAmount = (subtotal * discountPercent) / 100;
 	const finalAmount = subtotal - discountAmount;
