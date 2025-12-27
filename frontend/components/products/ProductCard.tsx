@@ -3,7 +3,7 @@
 import { Card, CardHeader, CardContent, CardFooter } from '~/components/ui/card';
 import { Button } from '~/components/ui/button';
 import { Star, ShoppingCart } from 'lucide-react';
-import { useCart } from '~/common/hooks/useCart';
+import { useCart } from '~/contextProviders/useCart';
 import { Product } from '~/common/hooks/useProductsQuery';
 
 export default function ProductCard({ product }: { product: Product }) {

@@ -3,7 +3,7 @@
 import { ShoppingCart } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Button } from '~/components/ui/button';
-import { useCart } from '~/common/hooks/useCart';
+import { useCart } from '~/contextProviders/useCart';
 
 export default function Navbar() {
 	const router = useRouter();
@@ -18,7 +18,7 @@ export default function Navbar() {
 
 				<Button variant="ghost" onClick={() => router.push('/cart')} className="relative">
 					<ShoppingCart className="w-5 h-5" />
-					{cart.length > 0 && <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full">{cart.length}</span>}
+					{cart.length > 0 && <div className="absolute -top-1 -right-2 bg-green-500 h-4 w-4 text-white text-xs rounded-full">{cart.length}</div>}
 				</Button>
 			</nav>
 		</header>
