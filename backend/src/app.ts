@@ -8,6 +8,7 @@ import morgan from 'morgan';
 
 import { errorHandler } from '~/middlewares/errorHandler';
 import productRoutes from '~/routes/product.routes';
+import couponRoutes from '~/routes/coupon.routes';
 import { AppError } from '~/utils/AppError';
 
 dotenv.config();
@@ -22,11 +23,13 @@ app.use(hpp());
 app.use(helmet());
 app.use(compression());
 
-app.get('/health', (_req, res) => {
+app.get('/api/health', (_req, res) => {
 	res.send('Uniblox backend running 🚀');
 });
 
-app.use('/products', productRoutes);
+app.use('/api/products', productRoutes);
+
+app.use('/api/coupons', couponRoutes);
 
 app.use((req, _res, next) => {
 	next(new AppError(`Route not found: ${req.originalUrl}`, 404));
