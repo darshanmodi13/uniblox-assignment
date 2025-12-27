@@ -1,7 +1,7 @@
 'use client';
 
 import Navbar from '~/common/components/Navbar';
-import ProductCard from '~/pages/components/products/ProductCard';
+import ProductCard from '~/screens/components/products/ProductCard';
 import { useProductsQuery } from '~/common/hooks/useProductsQuery';
 
 export default function ProductPage() {

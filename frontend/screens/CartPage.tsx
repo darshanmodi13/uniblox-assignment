@@ -4,8 +4,8 @@ import { Button } from '~/common/components/ui/button';
 import { useState } from 'react';
 import { useCart } from '~/contextProviders/useCart';
 import Navbar from '~/common/components/Navbar';
-import CouponForm from '~/pages/components/coupons/CouponForm';
-import CheckoutButton from '~/pages/components/cart/CheckoutButton';
+import CouponForm from '~/screens/components/coupons/CouponForm';
+import CheckoutButton from '~/screens/components/cart/CheckoutButton';
 import { useGetUser } from '~/common/hooks/useGetUser';
 
 export default function CartPage() {

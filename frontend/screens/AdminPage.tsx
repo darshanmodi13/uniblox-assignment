@@ -1,10 +1,10 @@
 'use client';
 
 import Navbar from '~/common/components/Navbar';
-import AdminStats from '~/pages/components/admin/AdminStats';
-import CouponList from '~/pages/components/admin/CouponList';
-import CreateCouponForm from '~/pages/components/admin/CreateCouponForm';
-import OrderList from '~/pages/components/admin/OrderList';
+import AdminStats from '~/screens/components/admin/AdminStats';
+import CouponList from '~/screens/components/admin/CouponList';
+import CreateCouponForm from '~/screens/components/admin/CreateCouponForm';
+import OrderList from '~/screens/components/admin/OrderList';
 
 export default function AdminPage() {
 	return (

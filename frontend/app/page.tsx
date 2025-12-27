@@ -1,3 +1,3 @@
-import ProductPage from '~/pages/ProductPage';
+import ProductPage from '~/screens/ProductPage';
 
 export default ProductPage;
