@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { Product } from '~/types/product.types';
-import { AppError } from '~/utils/AppError';
 
 const products: Product[] = Array.from({ length: 20 }, (_, i) => {
 	const price = Math.floor(Math.random() * 100) + 20;

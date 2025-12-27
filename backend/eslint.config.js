@@ -7,6 +7,7 @@ export default [
 	js.configs.recommended,
 	{
 		files: ['**/*.ts'],
+		ignores: ['dist/**', 'node_modules/**', '**/*.test.ts'],
 		languageOptions: {
 			parser: tsParser,
 			ecmaVersion: 2020,
